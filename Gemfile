@@ -8,9 +8,12 @@ end
 #devise
 gem 'devise', '~> 4.2.0'
 
-
 #debugger 
 gem 'pry-rails', :group => :development
+
+#ignore
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
