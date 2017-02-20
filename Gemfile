@@ -18,6 +18,12 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'twitter-bootstrap-rails', '~> 4.0.0'
 gem 'devise-bootstrap-views'
 
+#devise omniauth
+gem 'omniauth', '~> 1.5.0'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 
 
 
