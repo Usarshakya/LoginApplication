@@ -5,11 +5,11 @@
     <p><h3>Hello,</h3><br>
     <b>Your Personal Details:</b>
     <br><br>
-     <%= image_tag current_user.normalimage %><br>
+     
      <br>
     <b>Name  : </b><%= current_user.name %><br>
     <b>Email : </b><%= current_user.email %><br>
-    <%= link_to "contacts :", invites_new_path %><br>
+    
     -<%= link_to "sign_out", destroy_user_session_path, 
         :method => 'delete', 
         data: {confirm:'Do you want to sign_out?'}%></p>
