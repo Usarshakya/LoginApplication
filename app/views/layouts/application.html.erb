@@ -47,11 +47,42 @@
         </button>
         <a class="navbar-brand" href="#">LoginApplication</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= current_user.email_verified? ? image_tag(current_user.image) + current_user.name : "회원가입 중..."   %>
+              <%= current_user.identities.size == 0 ? "" : "(via " + current_user.identities.map(&:provider).join("/").titleize + ")" %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <% if current_user.identities.count == 0  %>
+                  <%= link_to("My Profile", edit_user_registration_path) %>
+                <% else %>
+                  <%= link_to_provider(current_user) %>
+                <% end %>
+              </li>
+              <li><%= link_to "Roles : " + user_roles(current_user), '#' %></li>
+            </ul>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+          </li>
+        <% else %>
+          <li class="drowpdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Sign in with
+              <b class='caret'></b>
+            </a>
+            <ul class='dropdown-menu'>
+              <li><%= link_to "LoginApp", new_user_session_path %></li>
+             
+            </ul>
+          </li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
@@ -62,17 +93,7 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+       
       </div><!--/row-->
 
       <footer>
