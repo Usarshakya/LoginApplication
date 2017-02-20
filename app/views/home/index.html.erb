@@ -1,2 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Welcome to User LOGIN APPLICATION</h1>
+<br>
+<br>
+<div id="arrange">
+<%= image_tag("userpic/user.png")%>
+<p id="signin">if you have an account : <%= link_to "sign_in", new_user_session_path %><br>
+otherwise, <%= link_to "create_an_account", user_session_path %> <br> 
+you can also, <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<br>Also, <%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path %><br>
+Also,<%= link_to "Sign in with google account", user_google_oauth2_omniauth_authorize_path %></p>
+</div>
