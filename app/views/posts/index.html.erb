@@ -10,7 +10,5 @@
     <b>Name  : </b><%= current_user.name %><br>
     <b>Email : </b><%= current_user.email %><br>
     
-    -<%= link_to "sign_out", destroy_user_session_path, 
-        :method => 'delete', 
-        data: {confirm:'Do you want to sign_out?'}%></p>
+    
     <% end %>
