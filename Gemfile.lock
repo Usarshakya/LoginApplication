@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/Diego81/omnicontacts.git
+  revision: 64a50f77ad677e19fb96c45aa19bd5bfb28b6f81
+  specs:
+    omnicontacts (0.3.9)
+      json
+      rack
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -140,9 +148,6 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
-    omnicontacts (0.3.7)
-      json
-      rack
     orm_adapter (0.5.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -248,7 +253,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-twitter
-  omnicontacts
+  omnicontacts!
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.1)

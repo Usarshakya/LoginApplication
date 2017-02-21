@@ -23,9 +23,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20] 
       user.name     = auth.info.name
       user.image    = auth.info.image
-      
-
-      
+            
       if auth.provider == "twitter" 
         user.email = auth.uid + "@twitter.com"          
       else

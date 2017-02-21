@@ -1,0 +1,18 @@
+<% unless @contacts.nil?%>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>      
+    </tr> 
+
+    <% @contacts.each do |c|%>
+      <tr>
+        <td><%= c[:name]%> : </td>
+        <td><%= c[:email]%></td>
+      </tr>
+    
+    <%end%>  
+
+  </table>  
+<%end%>

@@ -5,10 +5,12 @@
     <p><h3>Hello,</h3><br>
     <b>Your Personal Details:</b>
     <br><br>
-    
+    <%= image_tag current_user.image %>
     <br>
     <b>Name  : </b><%= current_user.name %><br>
     <b>Email : </b><%= current_user.email %><br>
+    
+    <p><a href="/contacts/gmail">Gmail</a></p>
     
     
 <% end %>
