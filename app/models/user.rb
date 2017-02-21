@@ -22,6 +22,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20] 
       user.name     = auth.info.name
+      
       if auth.provider == "twitter" 
         user.email = auth.uid + "@twitter.com"          
       else
@@ -30,9 +31,9 @@ class User < ApplicationRecord
     end
   end
     
-  def normalimage
-    "http://graph.facebook.com/#{self.uid}/picture?type=normal"
-  end
+  # def normalimage  	
+  #   "http://graph.facebook.com/#{self.uid}/picture?type=normal"    
+  # end
 
 end
 
