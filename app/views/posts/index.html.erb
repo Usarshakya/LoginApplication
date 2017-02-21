@@ -5,12 +5,17 @@
     <p><h3>Hello,</h3><br>
     <b>Your Personal Details:</b>
     <br><br>
-    <%= image_tag current_user.image %>
+
+    <% if current_user.provider == "facebook"||"twitter" %>
+      <%= image_tag current_user.image %>
+    <% end %>
     <br>
     <b>Name  : </b><%= current_user.name %><br>
     <b>Email : </b><%= current_user.email %><br>
-    
-    <p><a href="/contacts/gmail">Gmail</a></p>
+
+    <% if current_user.provider == "google_oauth2" %>    
+      <p><a href="/contacts/gmail">Gmail Contacts</a></p>
+    <% end %>
     
     
 <% end %>

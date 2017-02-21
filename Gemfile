@@ -23,9 +23,12 @@ gem 'omniauth', '~> 1.5.0'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+
 #google contacts
 gem "omnicontacts", github: 'Diego81/omnicontacts'
 
+#papperclip
+gem 'paperclip', '~> 4.1'
 
 gem 'koala'
 
