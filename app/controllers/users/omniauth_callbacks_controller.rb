@@ -3,7 +3,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
 
     user = User.from_omniauth(request.env["omniauth.auth"], current_user)
-    # binding.pry
+    
     if user.persisted?
       flash[:notice] = "You are in..!!! Successfully Signed In"
       sign_in_and_redirect(user)
