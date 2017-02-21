@@ -30,6 +30,10 @@ class User < ApplicationRecord
       end
     end
   end
+
+  # def facebook
+  #   @facebook ||= Koala::Facebook::API.new(oauth_token)
+  # end
     
   # def normalimage  	
   #   "http://graph.facebook.com/#{self.uid}/picture?type=normal"    
