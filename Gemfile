@@ -27,6 +27,9 @@ gem 'omniauth-google-oauth2'
 
 gem 'koala'
 
+#google contacts
+gem "omnicontacts"
+
 
 
 
