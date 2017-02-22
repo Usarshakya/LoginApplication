@@ -1,0 +1,48 @@
+
+<% if user_signed_in? %>
+  <% if current_user.provider == nil %>  
+    <h1>Welcome To User Login Application With Devise</h1> 
+    <hr>
+    <p><h2>Hello,</h2><br>
+    <h3><%= current_user.name %></h3>
+    <br>
+    <%= image_tag(current_user.avatar.url(:thumb)) %>     
+    <br><br>  
+    <b>Email : </b><%= current_user.email %><br>
+  <% end %>
+
+  <% if  current_user.provider == "facebook" %>
+    <h1>Welcome To User Login Application With <%= current_user.provider %></h1> 
+    <hr>
+    <p><h2>Hello,</h2><br>
+    <h3><%= current_user.name %></h3>
+    <br>
+    <%= image_tag current_user.image + "?type=normal" %><br>
+    <br><br>  
+    <b>Email : </b><%= current_user.email %><br>    
+  <% end %>
+
+  <% if  current_user.provider == "twitter" %>
+    <h1>Welcome To User Login Application With <%= current_user.provider %></h1> 
+    <hr>
+    <p><h2>Hello,</h2><br>
+    <h3><%= current_user.name %></h3>
+    <br>
+    <%= image_tag current_user.image + "?type=normal" %><br>
+    <br><br>  
+    <b>Email : </b><%= current_user.email %><br>     
+  <% end %>
+
+  <% if  current_user.provider == "google_oauth2" %>
+    <h1>Welcome To User Login Application With <%= current_user.provider %></h1> 
+    <hr>
+    <p><h2>Hello,</h2><br>
+    <h3><%= current_user.name %></h3>
+    <br>
+    <%= image_tag current_user.image %><br>
+    <br><br>  
+    <b>Email : </b><%= current_user.email %><br>
+    <p><a href="/contacts/gmail">Gmail Contacts</a></p> 
+  <% end %>    
+    
+<% end %>
